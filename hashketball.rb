@@ -1,319 +1,189 @@
-# hashketball = {
-#   :home => {
-#     :team_name => "Brooklyn Nets",
-#     :colors => ["Black", "White"],
-#     :players => {
-#       "Alan Anderson" => {
-#         :number => 0,
-#         :shoe => 16,
-#         :points => 22,
-#         :rebounds => 12,
-#         :assists => 12,
-#         :steals => 3,
-#         :blocks => 1,
-#         :slam_dunks => 1,
-#         },
-#       "Reggie Evans" => {
-#         :number => 30,
-#         :shoe => 14,
-#         :points => 12,
-#         :rebounds => 12,
-#         :assists => 12,
-#         :steals => 12,
-#         :blocks => 12,
-#         :slam_dunks => 7,
-#         },
-#       "Brook Lopez" => {
-#         :number => 11,
-#         :shoe => 17,
-#         :points => 17,
-#         :rebounds => 19,
-#         :assists => 10,
-#         :steals => 3,
-#         :blocks => 1,
-#         :slam_dunks => 15,
-#         },
-#       "Mason Plumlee" => {
-#         :number => 1,
-#         :shoe => 19,
-#         :points => 26,
-#         :rebounds => 12,
-#         :assists => 6,
-#         :steals => 3,
-#         :blocks => 8,
-#         :slam_dunks => 5,
-#         },
-#       "Jason Terry" => {
-#         :number => 31,
-#         :shoe => 15,
-#         :points => 19,
-#         :rebounds => 2,
-#         :assists => 2,
-#         :steals => 4,
-#         :blocks => 11,
-#         :slam_dunks => 1,
-#         },
-#       },
-#     },
-#   :away => {
-#     :team_name => "Charlotte Hornets",
-#     :colors => ["Turquoise", "Purple"],
-#     :players => {
-#       "Jeff Adrien" => {
-#         :number => 4,
-#         :shoe => 18,
-#         :points => 10,
-#         :rebounds => 1,
-#         :assists => 1,
-#         :steals => 2,
-#         :blocks => 7,
-#         :slam_dunks => 2,
-#         },
-#       "Bismak Biyombo" => {
-#         :number => 0,
-#         :shoe => 16,
-#         :points => 12,
-#         :rebounds => 4,
-#         :assists => 7,
-#         :steals => 7,
-#         :blocks => 15,
-#         :slam_dunks => 10,
-#         },
-#       "DeSagna Diop" => {
-#         :number => 2,
-#         :shoe => 14,
-#         :points => 24,
-#         :rebounds => 12,
-#         :assists => 12,
-#         :steals => 4,
-#         :blocks => 5,
-#         :slam_dunks => 5,
-#         },
-#       "Ben Gordon" => {
-#         :number => 8,
-#         :shoe => 15,
-#         :points => 33,
-#         :rebounds => 3,
-#         :assists => 2,
-#         :steals => 1,
-#         :blocks => 1,
-#         :slam_dunks => 0,
-#         },
-#       "Brendan Haywood" => {
-#         :number => 33,
-#         :shoe => 15,
-#         :points => 6,
-#         :rebounds => 12,
-#         :assists => 12,
-#         :steals => 22,
-#         :blocks => 5,
-#         :slam_dunks => 12,
-#         },
-#       },
-#     },
-#   }
+require 'pry'
 
-# this isn't working
-# since we're dealing with a huge hash I decided to simply return a hash which is the first step of the first method called "game_hash"
-
-# gamehash = {
-#   :thing => "ayyyoooo"
-# }
-  
-# def game_hash(gamehash)
-#   puts gamehash
-# end
-
-# using the short "gamehash" for step 1, returning error w "wrong # of arguments (gamehash being passed in, method not called for as we are running rspec)
-
-# so now I tried storing the hash within a method and passing in the method to the first method instead of a hash
-
-# def gamehash
-#   hash = {
-#     :thing => "ayoooooo"
-#   }
-# end
-
-# def game_hash(gamehash)
-#   puts gamehash
-# end
-
-# that didn't work either
-# so now what I'm going to do is steal someone's pull request who finished the lab with no failures
-# I compared rspec files using diffchecker.com and the files are exactly the same. so then I compared our hashes
-# and what I realized is that some of my hashes have commas at the end of a hash when they are finished. so that could contribute to the problem?
-# this is the part where I repaste the entire hash without the commas and then wrap it in a method
-
-
-def hash
-hashketball = {
-  :home => {
-    :team_name => "Brooklyn Nets",
-    :colors => ["Black", "White"],
-    :players => {
-      "Alan Anderson" => {
-        :number => 0,
-        :shoe => 16,
-        :points => 22,
-        :rebounds => 12,
-        :assists => 12,
-        :steals => 3,
-        :blocks => 1,
-        :slam_dunks => 1
+def game_hash
+  return {
+    :home => {
+      :team_name => "Brooklyn Nets",
+      :colors => ["Black", "White"],
+      :players => {
+        "Alan Anderson" => {
+          :number => 0,
+          :shoe => 16,
+          :points => 22,
+          :rebounds => 12,
+          :assists => 12,
+          :steals => 3,
+          :blocks => 1,
+          :slam_dunks => 1
         },
-      "Reggie Evans" => {
-        :number => 30,
-        :shoe => 14,
-        :points => 12,
-        :rebounds => 12,
-        :assists => 12,
-        :steals => 12,
-        :blocks => 12,
-        :slam_dunks => 7
+        "Reggie Evans" => {
+          :number => 30,
+          :shoe => 14,
+          :points => 12,
+          :rebounds => 12,
+          :assists => 12,
+          :steals => 12,
+          :blocks => 12,
+          :slam_dunks => 7
         },
-      "Brook Lopez" => {
-        :number => 11,
-        :shoe => 17,
-        :points => 17,
-        :rebounds => 19,
-        :assists => 10,
-        :steals => 3,
-        :blocks => 1,
-        :slam_dunks => 15
+        "Brook Lopez" => {
+          :number => 11,
+          :shoe => 17,
+          :points => 17,
+          :rebounds => 19,
+          :assists => 10,
+          :steals => 3,
+          :blocks => 1,
+          :slam_dunks => 15
         },
-      "Mason Plumlee" => {
-        :number => 1,
-        :shoe => 19,
-        :points => 26,
-        :rebounds => 12,
-        :assists => 6,
-        :steals => 3,
-        :blocks => 8,
-        :slam_dunks => 5
+        "Mason Plumlee" => {
+          :number => 1,
+          :shoe => 19,
+          :points => 26,
+          :rebounds => 12,
+          :assists => 6,
+          :steals => 3,
+          :blocks => 8,
+          :slam_dunks => 5
         },
-      "Jason Terry" => {
-        :number => 31,
-        :shoe => 15,
-        :points => 19,
-        :rebounds => 2,
-        :assists => 2,
-        :steals => 4,
-        :blocks => 11,
-        :slam_dunks => 1
+        "Jason Terry" => {
+          :number => 31,
+          :shoe => 15,
+          :points => 19,
+          :rebounds => 2,
+          :assists => 2,
+          :steals => 4,
+          :blocks => 11,
+          :slam_dunks => 1
         }
       }
     },
-  :away => {
-    :team_name => "Charlotte Hornets",
-    :colors => ["Turquoise", "Purple"],
-    :players => {
-      "Jeff Adrien" => {
-        :number => 4,
-        :shoe => 18,
-        :points => 10,
-        :rebounds => 1,
-        :assists => 1,
-        :steals => 2,
-        :blocks => 7,
-        :slam_dunks => 2
+    :away => {
+      :team_name => "Charlotte Hornets",
+      :colors => ["Turquoise", "Purple"],
+      :players => {
+        "Jeff Adrien" => {
+          :number => 4,
+          :shoe => 18,
+          :points => 10,
+          :rebounds => 1,
+          :assists => 1,
+          :steals => 2,
+          :blocks => 7,
+          :slam_dunks => 2
         },
-      "Bismak Biyombo" => {
-        :number => 0,
-        :shoe => 16,
-        :points => 12,
-        :rebounds => 4,
-        :assists => 7,
-        :steals => 7,
-        :blocks => 15,
-        :slam_dunks => 10
+        "Bismak Biyombo" => {
+          :number => 0,
+          :shoe => 16,
+          :points => 12,
+          :rebounds => 4,
+          :assists => 7,
+          :steals => 7,
+          :blocks => 15,
+          :slam_dunks => 10
         },
-      "DeSagna Diop" => {
-        :number => 2,
-        :shoe => 14,
-        :points => 24,
-        :rebounds => 12,
-        :assists => 12,
-        :steals => 4,
-        :blocks => 5,
-        :slam_dunks => 5
+        "DeSagna Diop" => {
+          :number => 2,
+          :shoe => 14,
+          :points => 24,
+          :rebounds => 12,
+          :assists => 12,
+          :steals => 4,
+          :blocks => 5,
+          :slam_dunks => 5
         },
-      "Ben Gordon" => {
-        :number => 8,
-        :shoe => 15,
-        :points => 33,
-        :rebounds => 3,
-        :assists => 2,
-        :steals => 1,
-        :blocks => 1,
-        :slam_dunks => 0
+        "Ben Gordon" => {
+          :number => 8,
+          :shoe => 15,
+          :points => 33,
+          :rebounds => 3,
+          :assists => 2,
+          :steals => 1,
+          :blocks => 1,
+          :slam_dunks => 0
         },
-      "Brendan Haywood" => {
-        :number => 33,
-        :shoe => 15,
-        :points => 6,
-        :rebounds => 12,
-        :assists => 12,
-        :steals => 22,
-        :blocks => 5,
-        :slam_dunks => 12
+        "Brendan Haywood" => {
+          :number => 33,
+          :shoe => 15,
+          :points => 6,
+          :rebounds => 12,
+          :assists => 12,
+          :steals => 22,
+          :blocks => 5,
+          :slam_dunks => 12
         }
       }
     }
   }
 end
 
-def game_hash(hash)
-  puts hash
+def home_team_name
+  game_hash[:home][:team_name]
 end
 
-# k i just got the weirdest error - snippet_extractor.rb:101:in `&': no implicit conversion of Hash into Integer (TypeError)
-# i'm going to come back to this lab bc this is one big giant no lol
+# puts home_team_name
+# => "Brooklyn Nets"
 
+# def good_practices
+#   game_hash.each do |location, team_data|
+#     #are you ABSOLUTELY SURE what 'location' and 'team data' are? use binding.pry to find out!
+#     binding.pry
+#       team_data.each do |attribute, data|
+#         #are you ABSOLUTELY SURE what 'attribute' and 'team data' are? use binding.pry to find out!
+#         binding.pry
 
-## anyway this was the rest of my previously written code
-
-# def team_name(hash)
-#   hash[:home][:team_name]
-# end
-# puts team_name(hashketball)
-
-# def num_points_scored(hash, player)
-#   hash[:home][:players][player][:points]
-# end
-
-# puts num_points_scored(hashketball, "Alan Anderson")
-
-# def shoe_size(hash)
-#   hash[:team_name][:players][:shoe]
+#         #what is 'data' at each loop through out .each block? when will the following line of code work and when will it break?
+#         data.each do |data_item|
+#             binding.pry
+#       end
+#     end
+#   end
 # end
 
-# puts shoe_size(hashketball)
+# good_practices
 
-# def team_colors(hash, team_name)
-#   hash[:home][:colors]
-# end
+def num_points_scored(player_name)
+  game_hash.each do |location, team_data|
+    if team_data[:players].has_key?(player_name)
+      team_data.each do |key, stats|
+        if stats.is_a?(Hash)
+          player_stats = stats[player_name]
+          player_stats.each do |thing, value|
+            return value if thing == :points
+          end
+        end
+      end
+    end
+  end
+end
 
-# puts team_colors(hashketball, "Brooklyn Nets")
+def shoe_size(player_name)
+  game_hash.each do |location, team_data|
+    if team_data[:players].has_key?(player_name)
+      team_data.each do |key, stats|
+        if stats.is_a?(Hash)
+          player_stats = stats[player_name]
+          player_stats.each do |thing, value|
+            return value if thing == :shoe
+          end
+        end
+      end
+    end
+  end
+end
 
-# def team_names(hash)
-#   hash[:home][:team_name]
-# end
+def team_colors(team_name)
+  game_hash.each do |location, team_data|
+    if team_data.has_value?(team_name)
+      team_data.each do |key, value|
+        return value if key == :colors
+      end
+    end
+  end
+end
 
-# puts team_names(hashketball)
-
-# def players_numbers(hash, players)
-#   hash.each_value{|number| puts number}
-#   hash[:home][players][:number]
-# end
-
-# puts players_numbers(hashketball, :players)
-
-
-
-
-
-
-
-
-
-
+def team_names
+  game_hash.each do |location, team_data|
+    return team_data[:team_name]
+  end
+end
