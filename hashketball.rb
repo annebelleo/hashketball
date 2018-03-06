@@ -145,11 +145,11 @@ end
 def num_points_scored(player_name)
   game_hash.each do |location, team_data|
     if team_data[:players].has_key?(player_name)
-      team_data.each do |key, stats|
-        if stats.is_a?(Hash)
-          player_stats = stats[player_name]
-          player_stats.each do |thing, value|
-            return value if thing == :points
+      team_data.each do |key, stats| # if a hash has the player name that was inputted -> iterating on that hash
+        if stats.is_a?(Hash)  # finding value that is a hash - player stats is a hash while the rest are strings
+          player_stats = stats[player_name] # assigning variable to key that matches player name (which is a string)
+          player_stats.each do |thing, value| # iterating on player name's stats
+            return value if thing == :points # returning the value of the key called points
           end
         end
       end
@@ -182,8 +182,40 @@ def team_colors(team_name)
   end
 end
 
-def team_names
+def team_names # this one should work but rspec is recognizing array length as 13 instead of 2
   game_hash.each do |location, team_data|
     return team_data[:team_name]
   end
 end
+
+def player_numbers
+end
+
+def player_stats(player_name)
+  game_hash.each do |location, team_data|
+    if team_data[:players].has_key?(player_name)
+      team_data.each do |key, stats|
+        if stats.is_a?(Hash)
+          stats.each do |player, player_stats|
+            return player_stats if player == player_name
+          end
+        end
+      end
+    end
+  end
+end
+
+def big_shoe_rebounds
+  game_hash.each do |location, team_data|
+    team_data.each do |key, value|
+      if value.is_a?(Hash)
+        value.each do |player, player_stats|
+          sizes = player_stats[:shoe].to_i
+          puts sizes.class
+        end
+      end
+    end
+  end
+end
+
+big_shoe_rebounds
